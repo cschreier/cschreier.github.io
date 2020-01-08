@@ -1,37 +1,34 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>ToDos</title>
+        <title>Notes App</title>
         <link href="/styles/styles.css" rel="stylesheet"/>
         <link href="/images/favicon.png" rel="icon"/>
     </head>
     <body>
-        <div class="header">
+        <header class="header">
             <div class="container">
-                <h1 class="header__title">To-do App</h1>
-                <h2 class="header__subtitle">What to you need to do?</h2>
+                <h1 class="header__title">My Notes</h1>
+                <h2 class="header__subtitle">Take notes and never forget</h2>
             </div>
-        </div>
-
+        </header>
         <div class="actions">
             <div class="actions__container">
-                <input class="input" id="txtSearch" type="text" placeholder="Search...">
-                <label class="checkbox">
-                    <input type="checkbox" id="hide-completed"> Hide completed todos
-                </label>
+                <input class="input" id="txtSearchNotes" type="text" placeholder="Filter notes">
+                <select class="dropdown" id="filter-by">
+                    <option value="byEdited">Sort by last edited</option>
+                    <option value="byCreated">Sort by recently created</option>
+                    <option value="alphabetically">Sort alphabetically</option>
+                </select>
             </div>
         </div>
-
         <div class="container">
-            <div id="todos"></div>
-            <form id="add-todo-form">
-                <input class="input" type="text" placeholder="Type new Todo" id="todoText">
-                <button class="button">Add Todo</button>
-            </form>
+            <div id="notes"></div>
+            <button class="button" id="btnCreateNote">Create Note</button>
         </div>
-
         <script src="//wzrd.in/standalone/uuid%2Fv4@latest"></script>
-        <script src="/scripts/todo-functions.js"></script>
-        <script src="/scripts/todo-app.js"></script>
+        <script src="//momentjs.com/downloads/moment-with-locales.js"></script>
+        <script src="/scripts/notes-functions.js"></script>
+        <script src="/scripts/notes-app.js"></script>
     </body>
 </html>
